@@ -1,0 +1,5 @@
+alias §='cd /mnt/c/Users/emrah.kaya'
+alias gs='git status'
+alias gl='git log --oneline --all --graphh --decorate'
+alias gitwrecked='git reset HEAD --hard'
+alias e.='explorer.exe .'
