@@ -101,6 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+## Customization
 # Username
 DEFAULT_USER=emrah
 prompt_context(){}
+
+## Add aliasses
+source $HOME/.bash_aliases
