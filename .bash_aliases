@@ -8,3 +8,5 @@ alias sln='~/code/scripts/bash/sln.sh'
 alias updatealias='cp ~/code/dotfiles/.bash_aliases ~ && source ~/.bash_aliases'
 alias fixhosts='nano /mnt/c/Windows/System32/drivers/etc/hosts'
 alias seehosts='cat /mnt/c/Windows/System32/drivers/etc/hosts'
+alias ns='npm start'
+
