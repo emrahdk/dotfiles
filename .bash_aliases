@@ -11,4 +11,4 @@ alias seehosts='cat /mnt/c/Windows/System32/drivers/etc/hosts'
 alias ns='npm start'
 alias gitup='git push -u origin $1'
 alias gitmaster='git checkout master'
-
+alias gitconfig='cat .git/config'
