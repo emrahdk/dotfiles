@@ -34,7 +34,8 @@
             "acrylicOpacity": 0.75,
             "useAcrylic": true,
             "scrollbarState": "hidden",
-            "colorScheme": "Monokai Dark"
+            "colorScheme": "Monokai Dark",
+            "fontFace": "Cascadia Code PL"
         },
         "list":
         [
