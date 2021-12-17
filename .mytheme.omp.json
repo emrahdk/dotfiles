@@ -1,0 +1,73 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "vertical_offset": 0,
+      "horizontal-offset": 0,
+      "alignment": "left",
+      "segments": [
+        {
+          "vertical_offset": 0,
+          "horizontal-offset": 0,
+          "foreground": "green",
+          "properties": {
+            "style": "mixed",
+            "prefix": "",
+            "postfix": ""
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "foreground": "cyan",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}"
+          ],
+          "properties": {
+            "branch_ahead_icon": "↑",
+            "branch_behind_icon": "↓",
+            "branch_gone": "≢",
+            "branch_icon": " ",
+            "branch_identical_icon": "≡",
+            "cherry_pick_icon": "✓ ",
+            "commit_icon": "▷ ",
+            "fetch_status": true,
+            "merge_icon": "◴ ",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "Ɫ ",
+            "stash_count_icon": "",
+            "tag_icon": "▶ ",
+            "template": "{{ .HEAD }}{{ if .Staging.Changed }}{{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}"
+          },
+          "style": "powerline",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "white",
+          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "properties": {
+            "template": "λ",
+            "prefix": "",
+            "postfix": "",
+            "always_enabled": true
+          }
+        }
+      ]
+    }
+  ],
+  "console_title": true,
+  "console_title_style": "template",
+  "console_title_template": "{{.Path}}{{if .Root}} :: root{{end}}",
+  "final_space": true,
+  "osc99": true
+}
