@@ -1,12 +1,13 @@
-# Modules
-## Import oh-my-posh
-oh-my-posh --init --shell pwsh --config C:\Users\emrah.kaya\.mytheme.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config C:\Users\emrah\.mytheme.omp.json | Invoke-Expression
 
 ## Get fancy directory listing
 Import-Module -Name Terminal-Icons
 
 ## Add git autocomplete
 Import-Module posh-git
+
+## Add NPM autocomplete
+Import-Module npm-completion
 
 ## Add history autocomplete
 if ($host.Name -eq 'ConsoleHost')
