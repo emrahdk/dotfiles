@@ -115,16 +115,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# ZSH
-bash -c zsh
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-# If not running interactively, don't do anything
-case $- in
-
-# Colors in terminal
-export LS_COLORS="ow=01;36;40"

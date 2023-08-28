@@ -15,3 +15,6 @@ alias gitmaster='git checkout master'
 alias gitconfig='cat .git/config'
 alias gitprunetags='git tag -l | xargs git tag -d && git fetch -t'
 alias gitprune="git fetch --prune && git branch -v | grep -Pi '\[gone\]' | awk '{print $1}' | xargs git branch -D"
+alias glp="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --date=short --date-order"
+alias gitwrecked="git reset --hard HEAD"
+alias bat=batcat
