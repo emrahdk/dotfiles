@@ -1,73 +1,74 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
   "blocks": [
     {
-      "vertical_offset": 0,
-      "horizontal-offset": 0,
       "alignment": "left",
       "segments": [
         {
-          "vertical_offset": 0,
-          "horizontal-offset": 0,
           "foreground": "green",
           "properties": {
-            "style": "mixed",
-            "prefix": "",
-            "postfix": ""
+            "style": "full"
           },
           "style": "plain",
+          "template": "{{ .Path }} ",
           "type": "path"
-        },
-        {
-          "foreground": "cyan",
-          "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}"
-          ],
-          "properties": {
-            "branch_ahead_icon": "↑",
-            "branch_behind_icon": "↓",
-            "branch_gone": "≢",
-            "branch_icon": " ",
-            "branch_identical_icon": "≡",
-            "cherry_pick_icon": "✓ ",
-            "commit_icon": "▷ ",
-            "fetch_status": true,
-            "merge_icon": "◴ ",
-            "no_commits_icon": "[no commits]",
-            "rebase_icon": "Ɫ ",
-            "stash_count_icon": "",
-            "tag_icon": "▶ ",
-            "template": "{{ .HEAD }}{{ if .Staging.Changed }}{{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}"
-          },
-          "style": "powerline",
-          "type": "git"
         }
       ],
       "type": "prompt"
     },
+
     {
       "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone": "\u2262",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "✓ ",
+            "commit_icon": "\u25b7 ",
+            "fetch_status": true,
+            "merge_icon": "\u25f4 ",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "\u2c62 ",
+            "stash_count_icon": "",
+            "tag_icon": "\u25b6 ",
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "github_icon": "",
+            "template": "{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} "
+          },
+          "foreground": "cyan",
+          "type": "git",
+          "style": "powerline",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}"
+          ]
+        }
+      ]
+    },
+
+    {
       "alignment": "left",
       "newline": true,
       "segments": [
         {
-          "type": "exit",
-          "style": "plain",
           "foreground": "white",
-          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "foreground_templates": ["{{ if gt .Code 0 }}#BF616A{{ end }}"],
           "properties": {
-            "template": "λ",
-            "prefix": "",
-            "postfix": "",
             "always_enabled": true
-          }
+          },
+          "style": "plain",
+          "template": "\u03BB",
+          "type": "status"
         }
-      ]
+      ],
+      "type": "prompt"
     }
-  ],
-  "console_title": true,
-  "console_title_style": "template",
-  "console_title_template": "{{.Path}}{{if .Root}} :: root{{end}}",
-  "final_space": true,
-  "osc99": true
+  ]
 }
